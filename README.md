@@ -25,3 +25,40 @@ Instead of Icinga, Kucker will use Cron by [robfig](https://github.com/robfig/cr
 - [ ] It may not function with high load.
 - [ ] Restarting controller will start cron from zero.
 - [ ] And all cool features supported by Icinga.
+
+## What might Alerta object look like?
+
+Alerta is catalan of Alert - [GT](https://translate.google.com/#auto/ca/alert).
+
+```yaml
+apiVersion: monitoring.kucker/v1alpha1
+kind: Alerta
+metadata:
+  name: pod-status
+spec:
+  type: PodAlert
+  command: pod_status
+  args:
+  - --key1=val1
+  - --key2=val2
+  selector:
+    namespace: demo
+    matchLabels:
+      app: nginx
+  plugin:
+    pullBinaryPolicy: IfNotPresent
+    binary: https://github.com/kucker/plugin/releases/download/v0.1.0/pod_status
+  checkInterval: 30s
+  alertInterval: 2m
+  notifierSecretName: notifier-config
+  receivers:
+  - notifier: Mailgun
+    state: CRITICAL
+    to: ["ops@example.com"]
+```
+
+Here,
+ - `spec.type` can be PodAlert, NodeAlert, ClusterAlert.
+ - Kucker will execute `pod_status` command with provided arguments. 
+ - `spec.selector` will specify for which Pods this check will be done.
+ - `spec.plugin` holeds necessary information to download on-the-fly external binary.
