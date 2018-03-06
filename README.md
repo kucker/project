@@ -59,6 +59,6 @@ spec:
 
 Here,
  - `spec.type` can be PodAlert, NodeAlert, ClusterAlert.
- - Prohori will execute `pod_status` command with provided arguments. 
+ - Prohori will execute `pod_status` command with provided flags. 
  - `spec.selector` will specify for which Pods this check will be done.
  - `spec.plugin` holds necessary information to download on-the-fly external binary.
