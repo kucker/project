@@ -38,7 +38,7 @@ metadata:
 spec:
   type: PodAlert
   command: pod_status
-  args:
+  flags:
   - --key1=val1
   - --key2=val2
   selector:
