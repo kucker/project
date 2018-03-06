@@ -61,4 +61,4 @@ Here,
  - `spec.type` can be PodAlert, NodeAlert, ClusterAlert.
  - Kucker will execute `pod_status` command with provided arguments. 
  - `spec.selector` will specify for which Pods this check will be done.
- - `spec.plugin` holeds necessary information to download on-the-fly external binary.
+ - `spec.plugin` holds necessary information to download on-the-fly external binary.
