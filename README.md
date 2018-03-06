@@ -14,7 +14,7 @@ Instead of Icinga, Prohori will use Cron by [robfig](https://github.com/robfig/c
 ### Prohori may be support following features:
 
 - [ ] Single Resource Type for checker.
-- [ ] Add external plugin anytime on Running Kucker.
+- [ ] Add external plugin anytime on Running Prohori.
 - [ ] Track command State (count) and notification (count) in Status.
 - [ ] Single Resource type for notification.
 - [ ] Edit notification Resource object to acknowledge.
