@@ -3,9 +3,9 @@ Design docs and Issue tracker for this Project
 
 ## What is Prohori
 
-**Prohori** (_Praharī_) - (প্রহরী in Bangla) means watchman in English. In this project, Prohori is a watchman for Kubernetes objecrs.
+**Prohori** (_Praharī_) - (প্রহরী in Bangla) means watchman in English ([GT](https://translate.google.com/#en/bn/watchman)). In this project, Prohori is a watchman for Kubernetes objects.
 
-Prohori is a part-time hobby project inspired by [searchlight](https://github.com/appscode/searchlight). Unlike searchlight, Prohori implementation design does not require Icinga and Database. And this limitation makes it lightweight and usable only for dev cluster.
+Prohori is a part-time hobby project inspired by [searchlight](https://github.com/appscode/searchlight). Unlike searchlight, Prohori implementation does not require Icinga and Database. And this limitation makes it lightweight and usable only for dev cluster.
 
 Prohori will use [plugins](https://github.com/appscode/searchlight/tree/master/plugins) supported by searchlight to check Kubernetes objects and [go-notify](https://github.com/appscode/go-notify) to send notifications.
 
@@ -47,7 +47,7 @@ spec:
       app: nginx
   plugin:
     pullBinaryPolicy: IfNotPresent
-    binary: https://github.com/kucker/plugin/releases/download/v0.1.0/pod_status
+    binary: https://github.com/prohori/plugin/releases/download/v0.1.0/pod_status
   checkInterval: 30s
   alertInterval: 2m
   notifierSecretName: notifier-config
