@@ -1,17 +1,17 @@
 # project
 Design docs and Issue tracker for this Project
 
-## What is Kucker
+## What is Prohori
 
-Kucker is a Kubernetes objects Checker controller. This idea is moving around in my head for a long time. 
+**Prohori** (_Praharī_) - (প্রহরী in Bangla) means watchman in English. In this project, Prohori is a watchman for Kubernetes objecrs.
 
-Kucker is a part-time hobby project inspired by [searchlight](https://github.com/appscode/searchlight). Unlike searchlight, Kucker implementation design does not require Icinga and Database. And this limitation makes it lightweight and usable only for dev cluster.
+Prohori is a part-time hobby project inspired by [searchlight](https://github.com/appscode/searchlight). Unlike searchlight, Prohori implementation design does not require Icinga and Database. And this limitation makes it lightweight and usable only for dev cluster.
 
-Kucker will use [plugins](https://github.com/appscode/searchlight/tree/master/plugins) supported by searchlight to check Kubernetes objects and [go-notify](https://github.com/appscode/go-notify) to send notifications.
+Prohori will use [plugins](https://github.com/appscode/searchlight/tree/master/plugins) supported by searchlight to check Kubernetes objects and [go-notify](https://github.com/appscode/go-notify) to send notifications.
 
-Instead of Icinga, Kucker will use Cron by [robfig](https://github.com/robfig/cron) to run checker periodically.
+Instead of Icinga, Prohori will use Cron by [robfig](https://github.com/robfig/cron) to run checker periodically.
 
-### Kucker may be support following features:
+### Prohori may be support following features:
 
 - [ ] Single Resource Type for checker.
 - [ ] Add external plugin anytime on Running Kucker.
@@ -19,7 +19,7 @@ Instead of Icinga, Kucker will use Cron by [robfig](https://github.com/robfig/cr
 - [ ] Single Resource type for notification.
 - [ ] Edit notification Resource object to acknowledge.
 
-### Limitation of Kucker:
+### Limitation of Prohori:
 
 - [ ] Doesn't have any UI.
 - [ ] It may not function with high load.
@@ -31,7 +31,7 @@ Instead of Icinga, Kucker will use Cron by [robfig](https://github.com/robfig/cr
 Alerta is catalan of Alert - [GT](https://translate.google.com/#auto/ca/alert).
 
 ```yaml
-apiVersion: monitoring.kucker/v1alpha1
+apiVersion: monitoring.prohori/v1alpha1
 kind: Alerta
 metadata:
   name: pod-status
@@ -59,6 +59,6 @@ spec:
 
 Here,
  - `spec.type` can be PodAlert, NodeAlert, ClusterAlert.
- - Kucker will execute `pod_status` command with provided arguments. 
+ - Prohori will execute `pod_status` command with provided arguments. 
  - `spec.selector` will specify for which Pods this check will be done.
  - `spec.plugin` holds necessary information to download on-the-fly external binary.
